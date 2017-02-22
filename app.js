@@ -16,6 +16,7 @@ var register = require('./routes/register');
 var login = require('./routes/login');
 var setUser = require('./setUser');
 var logout = require('./routes/logout');
+var home = require('./routes/home');
 var app = express();
 
 app.engine('ejs', engine);
@@ -37,12 +38,13 @@ app.use(session({
 }));
 
 app.use(domain);
-app.use('/', setUser, index)
+app.use('/', setUser, index);
 app.use('/users', users);
 app.use('/boards', setUser, boards);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/logout', logout);
+app.use('/home', home);
 app.use(passport.initialize());
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
