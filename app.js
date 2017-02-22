@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var engine = require('ejs-locals');
+var passport = require('passport');
+var domain = require('express-domain-middleware');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -34,12 +36,14 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(domain);
 app.use('/', setUser, index)
 app.use('/users', users);
 app.use('/boards', setUser, boards);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/logout', logout);
+app.use(passport.initialize());
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
