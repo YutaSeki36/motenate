@@ -1,5 +1,9 @@
 <% layout('layout') %>
 <p class="main-title"><%= title %></p>
+<div class="message__title">
+  <p class="message__title__with">チャット with <%= board.title %> </p>
+
+</div>
 <% if (messageList.length) { %>
   <div class="white-bg">
       <ul class="main-list">

@@ -18,7 +18,7 @@ router.get('/:board_id', function(req, res, next) {
   var getMessagesQuery = 'SELECT M.message, M.image_path, ifnull(U.user_name, \'名無し\') AS user_name, DATE_FORMAT(M.created_at, \'%Y年%m月%d日 %k時%i分%s秒\') AS created_at FROM messages M LEFT OUTER JOIN users U ON M.user_id = U.user_id WHERE M.board_id = ' + boardId + ' ORDER BY M.created_at ASC'; // 変更
   connection.query(getBoardQuery, function(err, board) {
     connection.query(getMessagesQuery, function(err, messages) {
-    //  console.log(board[0]);
+      console.log(board[0]);
       res.render('board', {
         title: board[0].title,
         board: board[0],
