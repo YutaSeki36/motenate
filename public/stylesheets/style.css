@@ -364,6 +364,9 @@ top: -80px;
   text-align: center;
   margin-bottom: 2vmin;
 }
+.profile__img__{
+  width: 50%;
+}
 .profile__discription{
   display: block;
   font-size: 3vmin;
