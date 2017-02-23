@@ -13,7 +13,7 @@
     <% if (typeof user !== 'undefined') { %>
       <div id="header-fixed">
              <div id="header-bk">
-               <p>MOTENATE</p>
+               <img src="images/header.png" alt="">
              </div>
       </div>
         <a href="/logout" class="btn_logout">ログアウト</a>
@@ -22,16 +22,32 @@
                        <div class="tab">
                          <ul>
                            <a href="/home">
-                             <li class="tab__list">ランキング</li>
+                             <li class="tab__list">
+                               <img src="/images/king.png" class="tab__images" alt="">
+                               <br clear="left">
+                               <span>ランキング</span>
+                             </li>
                            </a>
                            <a href="/home">
-                             <li class="tab__list">新着</li>
+                             <li class="tab__list">
+                               <img src="/images/new.png" class="tab__images2" alt="">
+                               <br clear="left">
+                               <span>新着</span>
+                             </li>
                            </a>
                            <a href="/">
-                             <li class="tab__list">チャット</li>
+                             <li class="tab__list">
+                               <img src="/images/chat.png" class="tab__images" alt="">
+                               <br clear="left">
+                               <span>チャット</span>
+                             </li>
                            </a>
                            <a href="/profile/<%= user.user_id %>">
-                             <li class="tab__list">マイプロフィール</li>
+                             <li class="tab__list">
+                               <img src="/images/profile.png" class="tab__images3" alt="">
+                               <br clear="left">
+                               <span>マイプロフィール</span>
+                             </li>
                            </a>
                          </ul>
                        </div>

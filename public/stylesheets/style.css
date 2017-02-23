@@ -89,7 +89,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 */
 
 .wrapper {
-    padding: 10px 10px 37px;
+    /*padding: 10px 10px 37px;*/
 }
 .main-title {
     margin-bottom: 20px;
@@ -129,9 +129,9 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     margin-top: 10px;
 }
 .ranking{
-  margin-top: 40px;
+  margin-top: 12vmin;
   text-align: center;
-  font-size: 4vmin;
+  font-size: 7vmin;
 }
 .message__image {
     display: block;
@@ -260,13 +260,16 @@ div#header-fixed
     height: 40px;          /* 縦幅140px */
 }
 
+#header-bk img{
+  width: 40%;
 
+}
 div#header-bk {
 	background-color:#FFFFFF;     /* 背景色(黒) */
 	height:40px;              /* 縦の高さ110px */
 	width:100%;
   text-align: center;
-  font-size: 4vmin;
+  font-size: 5vmin;
 }
 #header-bk p{
     line-height: 6vmin;
@@ -291,29 +294,58 @@ div#footer-fixed
 div#footer-bk
 {
 	background-color:#FFFFFF;     /* 背景色(黒) */
-	height:50px;              /* 縦の高さ140px */
+	height:60px;              /* 縦の高さ140px */
 	width:100%;                /* 横の幅を100% */
 }
 
 div#footer {
 	border: 5px solid #fff;    /* 表示領域を白枠で囲う */
 	height: 100%;              /* 縦の表示領域はheader-bkと同じ */
-	width: 960px;              /* 横の幅970px */
+	width: 100%;              /* 横の幅970px */
 	margin: auto;              /* 中央揃え */
 }
 .tab{
   overflow: hidden;
   text-align: center;
   width: 100%;
-margin-left: 0vmin;
+  margin-left: 0vmin;
 }
 .tab__list{
-  width: 24.5vw;
+  width: 25vw;
   float: left;
-  height: 40px;
-  line-height: 40px;
+  height: 60px;
+  line-height: 85px;
+  box-sizing: border-box;
   border: 1px solid #000000;
   margin: auto;
+  overflow: hidden;
+  font-size: 3vmin;
+}
+.tab__images{
+  position: relative;
+  top:-5vmin;
+  width:10vmin;
+  height: 10vmin;
+}
+.tab__images2{
+  position: relative;
+  top:-5vmin;
+  left:2.5vmin;
+  width:7vmin;
+  height: 7vmin;
+}
+.tab__images3{
+  position: relative;
+  top:-5vmin;
+  width:8vmin;
+  height: 8vmin;
+}
+.tab__images::after{
+  content: " あああ ";
+}
+.tab__list span{
+  position: relative;
+top: -80px;
 }
 .profile{
   margin-top:8vmin;
@@ -429,4 +461,33 @@ margin-left: 0vmin;
   color: #ccc;
   margin-left: 3vmin;
   text-align: left;
+}
+@media screen and (max-width: 660px){
+  .white-bg {
+    padding: 10px;
+    height: 68vh;
+    border: 1px #ccc solid;
+    background-color: #fff;
+    overflow: hidden;
+    overflow: scroll;
+    margin-top: 10px;
+}
+.img_main-list__item {
+    margin-top: 10px;
+    margin-bottom: 5vmin;
+    margin-right: 2vmin;
+    margin-left: 2vmin;
+    width: 45%;
+    height: 250px;
+    float: left;
+}
+  .imageList_img {
+      display: block;
+      margin-bottom: 10px;
+      margin-right: 20px;
+      width: 100%;
+      height: 70vmin;
+      background-size: cover;
+      background-position: center;
+  }
 }
