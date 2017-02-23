@@ -34,7 +34,11 @@ router.get('/:board_id', function(req, res, next) {
 });
 
 router.post('/:board_id', upload.single('image_file'), function(req, res) {
-  var path = req.file.path;
+  if (req.file) {
+    var path = req.file.path;
+  }else{
+    var path = null;
+  }
   var message = req.body.message;
   var boardId = req.params.board_id;
   var userId = req.session.user_id? req.session.user_id: 0;

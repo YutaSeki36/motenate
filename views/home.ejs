@@ -1,13 +1,16 @@
 <% layout('layout') %>
 
 <% if(imageList.length){ %>
+  <div class="ranking">
+    <p class="ranking__title">ランキング</p>
+  </div>
   <div class="white-bg">
       <ul class="main-list">
           <% imageList.forEach(function(imageItem) { %>
               <li class="img_main-list__item">
                 <div class="image_list">
                    <% if (imageItem.image_path) { %>
-                      <a href="<%= imageItem.image_path %>" class="imageList_img" style="background-image: url(<%= imageItem.image_path %>);">
+                      <a href="/profile/<%= imageItem.user_id %>" class="imageList_img" style="background-image: url(<%= imageItem.image_path %>);">
                       </a>
                    <% } %>
 
@@ -17,6 +20,13 @@
       </ul>
   </div>
 <% } %>
+<form action="/home" method="post" enctype="multipart/form-data" class="board-form"> <!-- 変更 -->
+    <button type="submit" class="submit">投稿</button>
+    <div class="file-wrap">
+        画像を選択
+        <input type="file" name="image_file" class="file">
+    </div>
+</form>
 
 <% if (typeof user !== 'undefined') { %>
     <span class="login-user"><%= user.user_name %>さんとしてログインしています</span>

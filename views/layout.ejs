@@ -11,7 +11,32 @@
 <div class="wrapper">
     <%- body %>
     <% if (typeof user !== 'undefined') { %>
-        <a href="/logout" class="btn">ログアウト</a>
+      <div id="header-fixed">
+             <div id="header-bk">
+               <p>MOTENATE</p>
+             </div>
+      </div>
+        <a href="/logout" class="btn_logout">ログアウト</a>
+        <div id="footer-fixed">
+                <div id="footer-bk">
+                       <div class="tab">
+                         <ul>
+                           <a href="/home">
+                             <li class="tab__list">ランキング</li>
+                           </a>
+                           <a href="/home">
+                             <li class="tab__list">新着</li>
+                           </a>
+                           <a href="/">
+                             <li class="tab__list">チャット</li>
+                           </a>
+                           <a href="/profile/<%= user.user_id %>">
+                             <li class="tab__list">マイプロフィール</li>
+                           </a>
+                         </ul>
+                       </div>
+                </div>
+         </div>
     <% } else { %>
         <a href="/register" class="btn">会員登録</a>
         <a href="/login" class="btn">ログイン</a>

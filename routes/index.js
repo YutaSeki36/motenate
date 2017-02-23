@@ -18,10 +18,13 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res, next) {
   var title = req.body.title;
+  var me = req.body.Me;
+  var you = req.body.You;
   var userId = req.session.user_id? req.session.user_id: 0; // 追加
   var createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
-  var query = 'INSERT INTO boards (user_id, title, created_at) VALUES ("' + userId + '", ' + '"' + title + '", ' + '"' + createdAt + '")'; // 変更
+  var query = 'INSERT INTO boards (user_id, title, created_at,with_user_id) VALUES ("' + userId + '", ' + '"' + title + '", ' + '"' + createdAt + '", ' + '"' + you +'")'; // 変更
   connection.query(query, function(err, rows) {
+    console.log(me);
     res.redirect('/');
   });
 });

@@ -121,9 +121,17 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 }
 .white-bg {
     padding: 10px;
+    height: 70vmin;
     border: 1px #ccc solid;
     background-color: #fff;
     overflow: hidden;
+    overflow: scroll;
+    margin-top: 10px;
+}
+.ranking{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 4vmin;
 }
 .message__image {
     display: block;
@@ -217,6 +225,14 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     border-radius: 5px;
     background-color: #fff;
 }
+.btn_logout{
+  display: inline-block;
+  padding: 5px;
+  margin: 10px 0 30px 10px;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  background-color: #fff;
+}
 .error {
     padding: 10px;
     margin: 0 10px;
@@ -233,4 +249,184 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     border: 1px #ccc solid;
     background-color: #fff;
     -webkit-appearance: none;
+}
+
+div#header-fixed
+{
+    position: fixed;            /* ヘッダーの固定 */
+    top: 0px;                   /* 位置(上0px) */
+    left: 0px;                  /* 位置(右0px) */
+    width: 100%;                /* 横幅100%　*/
+    height: 40px;          /* 縦幅140px */
+}
+
+
+div#header-bk {
+	background-color:#FFFFFF;     /* 背景色(黒) */
+	height:40px;              /* 縦の高さ110px */
+	width:100%;
+  text-align: center;
+  font-size: 4vmin;
+}
+#header-bk p{
+    line-height: 6vmin;
+}
+
+
+div#header {
+	border: 5px solid #fff;    /* 表示領域を白枠で囲う */
+	height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+	width: 960px;              /* 横の幅970px */
+	margin: auto;              /* 中央揃え */
+}
+
+div#footer-fixed
+{
+    position: fixed;            /* フッターの固定 */
+    bottom: 0px;                /* 位置(下0px) */
+    left: 0px;                  /* 位置(左0px) */
+    width: 100%;                /* 横幅100%　*/            /* 縦幅140px */
+}
+
+div#footer-bk
+{
+	background-color:#FFFFFF;     /* 背景色(黒) */
+	height:50px;              /* 縦の高さ140px */
+	width:100%;                /* 横の幅を100% */
+}
+
+div#footer {
+	border: 5px solid #fff;    /* 表示領域を白枠で囲う */
+	height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+	width: 960px;              /* 横の幅970px */
+	margin: auto;              /* 中央揃え */
+}
+.tab{
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+margin-left: 0vmin;
+}
+.tab__list{
+  width: 24.5vw;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #000000;
+  margin: auto;
+}
+.profile{
+  margin-top:8vmin;
+}
+.profile__name__text{
+  text-align: center;
+  font-size: 7vmin;
+  margin-bottom: 2vmin;
+}
+.profile__img{
+  text-align: center;
+  margin-bottom: 2vmin;
+}
+.profile__discription{
+  display: block;
+  font-size: 3vmin;
+  width: 60%;
+  margin: auto;
+}
+.chat{
+  margin: 5vmin 0 5vmin 0;
+  text-align: center;
+  font-size: 4vmin;
+}
+.right{
+  text-align: right;
+  margin-right: 3vmin;
+}
+#balloon-1-right {
+	position: relative;
+	display: inline-block;
+	padding: 0 15px;
+	width: auto;
+	min-width: 115px;
+	height: 40px;
+	line-height: 40px;
+	color: #19283C;
+	text-align: center;
+	background: #F6F6F6;
+	border: 3px solid #19283C;
+	z-index: 0;
+  margin-left: auto;
+}
+#balloon-1-right:before {
+	content: "";
+	position: absolute;
+	top: 50%; right: -8px;
+	margin-top: -9px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 9px 0 9px 9px;
+	border-color: transparent transparent transparent #F6F6F6;
+	z-index: 0;
+}
+#balloon-1-right:after {
+	content: "";
+	position: absolute;
+	top: 50%; right: -12px;
+	margin-top: -10px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent #19283C;
+	z-index: -1;
+}
+#balloon-1-left {
+	position: relative;
+	display: inline-block;
+	padding: 0 15px;
+	width: auto;
+	min-width: 115px;
+	height: 40px;
+	line-height: 40px;
+	color: #19283C;
+	text-align: center;
+	background: #F6F6F6;
+	border: 3px solid #19283C;
+	z-index: 0;
+  margin-left: 3vmin;
+}
+#balloon-1-left:before {
+	content: "";
+	position: absolute;
+	top: 50%; left: -8px;
+	margin-top: -9px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 9px 9px 9px 0;
+	border-color: transparent #F6F6F6 transparent transparent;
+	z-index: 0;
+}
+#balloon-1-left:after {
+	content: "";
+	position: absolute;
+	top: 50%; left: -12px;
+	margin-top: -10px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #19283C transparent transparent;
+	z-index: -1;
+}
+.message__date__left{
+  font-size: 10px;
+  color: #ccc;
+  margin-left: 3vmin;
+  text-align: left;
 }

@@ -11,15 +11,15 @@ cloudinary.config({
   api_secret: 'X6itYh1kRvdyqlQIWgqSOVkCu24'
 });
 
-router.get('/', function(req, res) {
+router.get('/:user_id', function(req, res) {
+  var userId = req.params.user_id;
   if(req.session.user_id){
-  var userId = req.session.user_id? req.session.user_id: 0;
-  var query = 'select * from time_line_img'; //画像読み込み
+  var query = 'select * from users WHERE user_id ='+userId; //画像読み込み
   connection.query(query, function(err, rows) {
     console.log(rows);
-    res.render('home', {
+    res.render('profile', {
       title: 'ランキング',
-      imageList: rows
+      profile: rows[0]
     });
   });
 }else{
@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
 });
 
 
-router.post('/', upload.single('image_file'), function(req, res) {
+router.post('/:user_id', upload.single('image_file'), function(req, res) {
   var path = req.file.path;
   var userId = req.session.user_id? req.session.user_id: 0;
   cloudinary.uploader.upload(path, function(result) {

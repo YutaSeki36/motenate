@@ -6,12 +6,19 @@
           <% messageList.forEach(function(messageItem) { %>
               <li class="main-list__item">
                 <div class="message">
-                   <% if (messageItem.image_path) { %>
+                   <% if (messageItem.image_path !== 'undefined') { %>
                       <a href="<%= messageItem.image_path %>" class="message__image" style="background-image: url(<%= messageItem.image_path %>);">
                       </a>
                    <% } %>
-                    <p class="message__title"><%= messageItem.message %></p>
+                    <% if (messageItem.user_name == user.user_name) { %>
+                      <div class="right">
+                    <p id="balloon-1-right" class="message__title"><%= messageItem.message %></p>
                     <p class="message__date"><%= messageItem.user_name %> <%= messageItem.created_at %></p>
+                    </div>
+                     <% }else{ %>
+                       <p id="balloon-1-left" class="message__title"><%= messageItem.message %></p>
+                       <p class="message__date__left"><%= messageItem.user_name %> <%= messageItem.created_at %></p>
+                       <% } %>
                 </div>
               </li>
           <% }); %>
@@ -29,4 +36,4 @@
 <% if (typeof user !== 'undefined') { %>
     <span class="login-user"><%= user.user_name %>さんとしてログインしています</span>
 <% } %>
-<a href="/" class="btn">トップへもどる</a>
+<a href="/" class="btn">チャット一覧に戻る</a>

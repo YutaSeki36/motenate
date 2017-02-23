@@ -1,0 +1,31 @@
+<% layout('layout') %>
+<div class="profile">
+  <div class="profile__name">
+    <p class="profile__name__text"><%= profile.user_name %></p>
+  </div>
+  <div class="profile__img"><img src="<%= profile.user_img%>" alt="" class="profile__img__"></div>
+  <div class="profile__discription">
+    <p class="profile__discription__gendar">性別:<%= profile.gendar%></p>
+    <p class="profile__discription__location">場所:<%= profile.address %></p>
+    <p class="profile__discription__text">一言:こんにちは。よろしくお願いします.</p>
+  </div>
+</div>
+<% if(user.user_id !== profile.user_id){ %>
+  <form action="/" method="post" class="board-form">
+      <input type="hidden" name="title" value=""><br>
+      <input type="hidden" name="Me" value="user.user_id">
+      <input type="hidden" name="You" value="">
+      <br>
+      <span class="label">この人に教えてもらう</span>
+      <button type="submit" class="submit">チャット作成</button>
+  </form>
+  <script>
+    document.getElementsByName('You')[0].value="<%= profile.user_id %>";
+    document.getElementsByName('title')[0].value="<%= profile.user_name %>";
+  </script>
+  <% } %>
+  <% if (typeof user !== 'undefined') { %>
+    <br>
+    <span class="login-user"><%= user.user_name %>さんとしてログインしています</span>
+  <% } %>
+<a href="/home" class="btn">ホームへもどる</a>
